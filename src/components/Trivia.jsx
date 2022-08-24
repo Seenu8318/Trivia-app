@@ -41,18 +41,22 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
                 setStop(true);
             })
         }
+        end();
     })
   };
   useEffect(()=>{
     letsPlay();
    },[letsPlay]);
-  let count = 0;
-  useEffect(() => {
+  
+   let count = 0;
+   const end = () => {
     if(count===data.length-1){
       setStop(true);
     }
-    setQuestion(data[questionNumber - 1]);
     count++;
+   }
+  useEffect(() => {
+    setQuestion(data[questionNumber - 1]);
   }, [data, questionNumber]);
 
   return (
