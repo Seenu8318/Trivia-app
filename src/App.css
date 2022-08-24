@@ -1,0 +1,206 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+.app{
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background-color: #020230;
+  color: white;
+}
+
+.main{
+  width: 75%;
+  background: linear-gradient(to bottom , rgba(0,0,0,0),#020230),
+   url("../quiz-bg.jpg") center;
+   display: flex;
+   flex-direction: column;
+}
+.top{
+  height: 50%;
+  position: relative;
+}
+.timer{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 300;
+  position: absolute;
+  bottom: 10px;
+  left: 80px;
+}
+.bottom{
+  height: 50%;
+}
+.trivia{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.question{
+  width :80%;
+  background : linear-gradient(#100241,black);
+  border: 2px solid white;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+
+}
+.answers{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.answer{
+  width: 40%;
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(#100241,black);
+  border: 2px solid white;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  margin: 0 10px 20px 10px;
+}
+.answer:hover,
+.answer.active{
+  background: darkblue;
+}
+.answer.correct{
+   animation: correct 3s ease forwards;
+}
+@keyframes correct{
+  0%,22%,45%{
+    background: darkblue;
+  }
+  20%,40%,75%{
+    background: linear-gradient(#100241,black);
+  }
+  76%,100%{
+    background: green;
+  }
+}
+.answer.wrong{
+  animation: wrong 3s ease forwards;
+}
+@keyframes wrong{
+ 0%,22%,45%{
+   background: darkblue;
+ }
+ 20%,40%,75%{
+   background: linear-gradient(#100241,black);
+ }
+ 76%,100%{
+   background: red;
+ }
+}
+.quit{
+  width: 15%;
+  padding: 5px;
+  text-align: center;
+  background: linear-gradient(#100241,black);
+  border: 2px solid white;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+  margin: 0 5px 5px 5px;
+  color: white;
+}
+.quit:hover{
+  background: red;
+}
+.pyramid{
+  width: 25%;
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.user{
+  width: 40%;
+  margin: 5px auto;
+  border: 2px solid white;
+  border-radius: 4px;
+  background: linear-gradient(#100241,black);
+  padding-left: 5px;
+  text-align: center;
+
+}
+.moneyList{
+  list-style: none;
+  width: 100%;
+  padding: 20px;
+  margin: 5px auto;
+}
+.moneyListItem{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+.moneyListItem.active{
+  background-color: teal;
+}
+
+.moneyListNumber{
+  font-size: 20px;
+  font-weight: 100;
+  width: 30%;
+}
+.moneyListAmount{
+  font-size: 20px;
+  font-weight: 300;
+}
+.endText{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.start{
+  width: 250px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 0;bottom: 0;left: 0;right: 0;
+  margin :auto;
+}
+
+.startInput{
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  margin: auto;
+}
+.startInput:focus{
+  outline: none;
+}
+.startButton{
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+}
