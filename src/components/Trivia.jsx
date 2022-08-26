@@ -55,7 +55,7 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
       setStop(true);
     }
     count++;
-   },[setStop, count]);
+   },[setStop, count,data.length]);
   useEffect(() => {
     setQuestion(data[questionNumber - 1]);
   }, [data, questionNumber]);
