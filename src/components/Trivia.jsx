@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useSound from "use-sound";
 import play from "../sounds/play.mp3";
 import correct from "../sounds/correct.mp3";
@@ -49,12 +49,13 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
    },[letsPlay]);
   
    let count = 0;
-   const end = () => {
+
+   const end = useCallback(()=> {
     if(count===data.length-1){
       setStop(true);
     }
     count++;
-   }
+   },[setStop, count]);
   useEffect(() => {
     setQuestion(data[questionNumber - 1]);
   }, [data, questionNumber]);
